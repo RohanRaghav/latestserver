@@ -8,9 +8,9 @@ const app = express();
 
 // Middleware to parse JSON
 app.use(express.json());
-
-// Middleware to handle CORS
-app.use(cors());
+app.use(cors({
+    origin: 'https://mediste.vercel.app' // Replace with the website link you want to allow
+  }));
 
 // MongoDB connection
 const mongoURI = process.env.MONGODB_URI;
